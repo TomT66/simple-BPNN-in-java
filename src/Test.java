@@ -12,7 +12,8 @@ public class Test {
         Random random = new Random();
         
         List<Integer> list = new ArrayList<Integer>();
-        
+        int origInputInt;
+        Scanner in = new Scanner(System.in);
         for (int i = 0; i < 50000; i++) {
             int value = random.nextInt();
             list.add(value);
@@ -43,12 +44,12 @@ public class Test {
         	}        	
         }
 
-        System.out.println(" training finished. Please input your number:");
+        System.out.println(" training finished. Please input your number(input 0 to end.):");
 
-        while(true) {
-        	Scanner in = new Scanner(System.in);
+        while(true){
         	int origInput = in.nextInt();
-        	int origInputInt = origInput;
+        	if(origInput == 0) break;
+        	origInputInt = origInput;
         	double[] input = new double[32];
         	int index = 31;
         	do {
@@ -76,7 +77,7 @@ public class Test {
 
         	case 3: System.out.println(origInputInt + "is a negative even number");break;
         	}
-        	in.close();
         }
+        in.close();
     }
 }
